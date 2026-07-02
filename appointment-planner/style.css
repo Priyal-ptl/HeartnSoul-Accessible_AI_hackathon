@@ -48,7 +48,7 @@ body {
   color: var(--label);
   font-size: 17px;
   line-height: 1.47;
-  max-width: 430px;
+  max-width: var(--shell-w, 430px);
   margin: 0 auto;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -614,7 +614,7 @@ body {
 .sticky-bottom {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  max-width: 430px;
+  max-width: var(--shell-w, 430px);
   margin: 0 auto;
   background: rgba(242,242,247,0.92);
   backdrop-filter: saturate(180%) blur(20px);
@@ -647,3 +647,104 @@ body {
 .sticky-btn:active { transform: scale(0.96); opacity: 0.88; }
 .sticky-btn-gcal { background: var(--green-dark); }
 .sticky-btn-ics  { background: var(--blue); }
+
+/* ═══ Responsive: tablet & desktop (≥700px) ═══ */
+@media (min-width: 700px) {
+  :root { --shell-w: 1024px; }
+
+  body {
+    background:
+      radial-gradient(1200px 600px at 20% -10%, rgba(0,122,255,0.05), transparent 60%),
+      radial-gradient(1000px 500px at 90% 0%, rgba(255,59,48,0.04), transparent 55%),
+      var(--bg);
+  }
+
+  /* Navbar spans full width, content centered */
+  .navbar { padding: 18px 40px 16px; }
+  .navbar-row { max-width: 944px; margin: 0 auto; }
+  .navbar-large { font-size: 40px; }
+
+  .section-header {
+    max-width: 944px;
+    margin: 0 auto;
+    padding: 28px 40px 12px;
+  }
+
+  /* Event cards become a responsive grid */
+  #events-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    max-width: 944px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .event-card { margin: 0; }
+  .event-card-inner { padding: 20px 16px 20px 0; height: 100%; }
+
+  /* Detail view: single centered column */
+  .alert-card, .detail-hero, .phase-block {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .alert-card  { margin-top: 16px; }
+  .detail-hero { margin-top: 16px; padding: 26px 26px 26px; }
+  .detail-title { font-size: 32px; }
+  .phase-block { margin-top: 12px; }
+  .sub { padding: 18px 26px; }
+  .phase-header { padding: 17px 22px; }
+
+  /* Floating action bar instead of edge-to-edge */
+  .sticky-bottom {
+    max-width: 640px;
+    bottom: 20px;
+    border-radius: var(--r-xl);
+    border: 0.5px solid var(--sep);
+    box-shadow: var(--shadow-lift);
+    padding: 12px;
+  }
+
+  .screen { padding-bottom: 140px; }
+}
+
+/* Wide desktop: three-column card grid */
+@media (min-width: 1100px) {
+  :root { --shell-w: 1280px; }
+  .navbar-row, .section-header, #events-list { max-width: 1200px; }
+  #events-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Hover states — only on devices that actually hover */
+@media (hover: hover) and (pointer: fine) {
+  .event-card { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift);
+  }
+  .event-card:hover .event-card-arrow { color: var(--label2); }
+  .btn-link:hover, .join-now-btn:hover, .sticky-btn:hover { filter: brightness(1.08); }
+  .btn-speak-global:hover { background: var(--fill2); }
+  .btn-speak-global.speaking:hover { background: var(--accent); filter: brightness(1.08); }
+  .btn-speak-sm:hover { background: var(--fill2); color: var(--label2); }
+  .btn-speak-sm.speaking:hover { background: var(--accent); color: #fff; }
+  .phase-header:hover { background: rgba(120,120,128,0.06); }
+  .check-box:hover { border-color: var(--green); }
+  .t-seg-btn:not(.active):hover { color: var(--label2); }
+  .btn-back:hover { opacity: 0.7; }
+}
+
+/* Keyboard focus for accessibility */
+button:focus-visible, a:focus-visible, .check-box:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
