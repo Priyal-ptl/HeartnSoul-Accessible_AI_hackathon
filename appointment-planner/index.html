@@ -3,34 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>My Appointments</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="screen active" id="screen-home">
-  <div class="navbar">
-    <div class="navbar-row">
-      <div>
-        <div class="navbar-large">❤️ Appointments</div>
-        <div class="navbar-date" id="today-date"></div>
-      </div>
-      <button class="btn-speak-global" id="home-speak-btn" onclick="toggleSpeakHome()">🔊 Read all</button>
-    </div>
-  </div>
-  <div class="section-header">Upcoming</div>
-  <div id="events-list"></div>
-</div>
+<div id="app">
 
-<div class="screen" id="screen-detail">
-  <div class="navbar">
-    <div class="navbar-row">
-      <button class="btn-back" onclick="showHome()">‹ Back</button>
-      <button class="btn-speak-global" id="detail-speak-btn" onclick="toggleSpeakDetail()">🔊 Read</button>
+  <div class="screen active" id="screen-home">
+    <div class="navbar">
+      <div class="navbar-row">
+        <div>
+          <div class="navbar-large">❤️ Appointments</div>
+          <div class="navbar-date" id="today-date"></div>
+        </div>
+        <button class="btn-speak-global" id="home-speak-btn" onclick="toggleSpeakHome()">🔊 Read all</button>
+      </div>
     </div>
+    <div class="section-header">Upcoming</div>
+    <div id="events-list"></div>
   </div>
-  <div id="detail-content"></div>
-  <div class="sticky-bottom" id="sticky-cal"></div>
+
+  <div class="screen" id="screen-detail">
+    <div class="navbar">
+      <div class="navbar-row">
+        <button class="btn-back" onclick="showHome()">
+          <svg width="10" height="17" viewBox="0 0 10 17" fill="none" style="margin-right:2px"><path d="M8.5 1.5L1.5 8.5L8.5 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </button>
+        <button class="btn-speak-global" id="detail-speak-btn" onclick="toggleSpeakDetail()">🔊 Read all</button>
+      </div>
+    </div>
+    <div id="detail-content"></div>
+    <div class="sticky-bottom" id="sticky-cal"></div>
+  </div>
+
 </div>
 
 <script src="procedures.js"></script>
