@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>My Appointments</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="screen active" id="screen-home">
+  <div class="navbar">
+    <div class="navbar-row">
+      <div>
+        <div class="navbar-large">❤️ Appointments</div>
+        <div class="navbar-date" id="today-date"></div>
+      </div>
+      <button class="btn-speak-global" id="home-speak-btn" onclick="toggleSpeakHome()">🔊 Read all</button>
+    </div>
+  </div>
+  <div class="section-header">Upcoming</div>
+  <div id="events-list"></div>
+</div>
+
+<div class="screen" id="screen-detail">
+  <div class="navbar">
+    <div class="navbar-row">
+      <button class="btn-back" onclick="showHome()">‹ Back</button>
+      <button class="btn-speak-global" id="detail-speak-btn" onclick="toggleSpeakDetail()">🔊 Read</button>
+    </div>
+  </div>
+  <div id="detail-content"></div>
+  <div class="sticky-bottom" id="sticky-cal"></div>
+</div>
+
+<script src="procedures.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
