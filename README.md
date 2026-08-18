@@ -2,6 +2,8 @@
 
 An accessible, mobile-first web app that helps people with learning disabilities, autism, and physical disabilities plan and get to their appointments with confidence.
 
+I participated as a **design volunteer** in a Heart n Soul accessibility workshop, co-designing this planner with the community.
+
 **Live app:** https://priyal-ptl.github.io/HeartnSoul/appointment-planner/
 
 Scan to open on a phone:
@@ -24,7 +26,7 @@ Scan to open on a phone:
 
 ## Accessibility & design
 
-- Designed with and for the Heart n Soul community
+- Designed with and for the Heart n Soul community during an accessibility workshop
 - Apple Human Interface Guidelines: large tap targets, high contrast, native-feel navigation
 - Works on any phone browser — no install, no login
 - Web Speech API for read-aloud (built into the browser, no server needed)
@@ -65,4 +67,4 @@ Hosted on **GitHub Pages** from the `main` branch. Pushing to `main` triggers th
 
 ---
 
-Built during a Heart n Soul co-design workshop, July 2026.
+Created as a design volunteer during a Heart n Soul accessibility workshop, July 2026.
