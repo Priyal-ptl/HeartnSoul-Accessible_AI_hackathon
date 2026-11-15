@@ -4,6 +4,8 @@ An accessible, mobile-first web app that helps people with learning disabilities
 
 I participated as a **design volunteer** in a Heart n Soul accessibility workshop, co-designing this planner with the community.
 
+The workshop was about using AI, specifically Claude, to prototype ideas quickly. We used it to ideate and co-create with disabled people and the other people in the room, and to talk about why accessibility-friendly solutions matter. Having a rough prototype in front of everyone that fast meant the conversation could stay on the idea. It was much easier to see the point than it would have been if we had waited on a polished build.
+
 **Live app:** https://priyal-ptl.github.io/HeartnSoul/appointment-planner/
 
 Scan to open on a phone:
